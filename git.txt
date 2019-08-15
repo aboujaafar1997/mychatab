@@ -1,0 +1,4 @@
+heroku login
+heroku create app
+heroku git:clone -a APP-NAME
+https://git.heroku.com/mychatabo.git master

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mychat othmane</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+    <script></script>
+
+
+
+    <style>
+        #chatimg:hover {
+            -webkit-transition: width 2s;
+            /* Safari */
+            transition: width 2s;
+            width: 500px;
+            height: 400px;
+        }
+        
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background: #7F7FD5;
+            background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+            background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+        }
+        
+        #firstcard {
+            height: 700px;
+            border-radius: 15px !important;
+            background-color: rgba(0, 0, 0, 0.4) !important;
+            color: azure;
+        }
+        
+        #output {
+            width: 900px;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.4) !important;
+            color: azure;
+            overflow-y: auto;
+        }
+        
+        #user {
+            height: 700px;
+            border-radius: 15px !important;
+            background-color: rgba(0, 0, 0, 0.4) !important;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" jumbotron">
+        <div class="row">
+            <div class="col-8">
+                <h1> Welcom to Mychatab othmane</h2>
+                    <p1> Ce site et développer par Moi : Aboujaafar othmane, et je veux remerci Ibtissame Fankouch et le pro développeur Abdelilah Boutizoua et Ayoub Hammadou.</p1>
+            </div>
+            <div class="col-4">
+                <img src="favicon.ico" class="img-responsive img-thumbnail">
+            </div>
+        </div>
+        <a class="btn btn-info" href="https://www.facebook.com/othmane.aboujaafar.1997"> Contacte</a>
+    </div>
+
+
+    <center>
+        <div class="col-md-8 col-xl-6" id="step">
+            <div class="card-header msg_head">
+                <div class="input-group">
+                    <input type="text" id="nom" class="form-control type_msg" placeholder="Type your name..." />
+                    <div class="input-group-append" id="send">
+                        <span class="input-group-text send_btn" id="btnnom"><i class="fas fa-location-arrow"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    <div class="container">
+        <div class="d-flex ">
+            <div class="row d-flex justify-content-between">
+                <div class="card col-4" id="user"> </div>
+                <div class="card col-8 d-flex " id="firstcard">
+                    <h3>chat rom by othmane aboujaafar </h3>
+                    <center>
+                        <div id="typ"></div>
+                        <div class="card col-11 " id="output">
+                        </div>
+                        <br>
+                        <div class="row d-flex justify-content-center " style="position: relative;">
+                            <div style="margin: 10px;" class="input-group">
+                                <input type="text" class="form-control type_msg col-11" id="message" placeholder="Type your message..." />
+                                <div class="input-group-append">
+                                    <span class="input-group-text send_btn" rows="5" id="btnmessage"><i class="fas fa-location-arrow"></i></span>
+                                </div>
+                            </div>
+                            <form class="row " action="/add" method="post" enctype="multipart/form-data">
+                                <span> <i  class="fas fa-images fa-3x " style="margin-right:20px"></i></i></span>
+                                <span>   <input  style="margin-top:12px" type="file" name="image" id="image"></span>
+                                <span class="input-group-text send_btn" type="submit" id="add"><i class="fas fa-location-arrow"></i></span>
+
+                            </form>
+
+                            <div class="loading" style="
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%,-50%);
+                                        width: 100%;
+                                        height: 100%;
+                                        background: #ddd;
+                                        display: none;">
+                                <img src="img/loader.gif" width="100px">
+                            </div>
+
+                        </div>
+
+
+                    </center>
+                </div>
+
+            </div>
+            <script src="/chat.js "></script>
+            <script src="/sendimage.js "></script>
+            <script src="js/jquery.js "></script>
+            <script src="js/bootstrap.js "></script>
+            <script type="text/javascript">
+                // Check for the File API support.
+            </script>
+</body>
+
+</html>
